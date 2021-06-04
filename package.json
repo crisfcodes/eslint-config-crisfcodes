@@ -1,7 +1,7 @@
 {
-  "name": "eslint-config-kentcdodds",
+  "name": "eslint-config-crisfcodes",
   "version": "0.0.0-semantically-released",
-  "description": "ESLint rules according to kentcdodds' personal preference",
+  "description": "ESLint rules according to crisfcodes' personal preference",
   "main": "index.js",
   "scripts": {
     "find-new-rules": "npm-run-all --parallel find-new-rules:*",
@@ -17,22 +17,25 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kentcdodds/eslint-config-kentcdodds"
+    "url": "https://github.com/crisfcodes/eslint-config-crisfcodes"
   },
   "keywords": [
     "eslint",
     "eslintconfig",
     "config",
-    "kentcdodds",
+    "crisfcodes",
     "javascript",
     "styleguide"
   ],
-  "author": "Kent C. Dodds <me@kentcdodds.com> (https://kentcdodds.com)",
+  "authors": [
+    "Kent C. Dodds <me@kentcdodds.com> (https://kentcdodds.com)",
+    "Cristian C. Flórez <cristianflorez0501@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kentcdodds/eslint-config-kentcdodds/issues"
+    "url": "https://github.com/crisfcodes/eslint-config-crisfcodes/issues"
   },
-  "homepage": "https://github.com/kentcdodds/eslint-config-kentcdodds#readme",
+  "homepage": "https://github.com/crisfcodes/eslint-config-crisfcodes#readme",
   "dependencies": {
     "@babel/core": "^7.14.3",
     "@babel/eslint-parser": "^7.14.4",
