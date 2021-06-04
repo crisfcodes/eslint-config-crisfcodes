@@ -10,6 +10,7 @@
     "find-new-rules:main": "eslint-find-rules --unused ./index.js",
     "find-new-rules:react": "eslint-find-rules --unused ./other/test/react/index.js",
     "find-new-rules:react-native": "eslint-find-rules --unused ./other/test/react-native/index.js",
+    "find-new-rules:comments": "eslint-find-rules --unused ./other/test/comments/index.js",
     "lint": "eslint --config index.js .",
     "test": "npm-run-all --parallel lint find-new-rules",
     "validate": "npm-run-all --parallel lint test",
