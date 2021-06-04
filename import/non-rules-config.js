@@ -6,7 +6,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['import'],
+  plugins: ['import', 'simple-import-sort'],
   settings: {
     'import/ignore': ['node_modules', '.json$', '.(scss|less|css|styl)$'],
   },

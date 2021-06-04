@@ -20,5 +20,23 @@ module.exports = {
         ],
       },
     ],
+    'simple-import-sort/exports': 'error',
+    'simple-import-sort/imports': [
+      'error',
+      {
+        // https://github.com/lydell/eslint-plugin-simple-import-sort#grouping
+        groups: [
+          // Side effect imports.
+          [
+            '^\\u0000',
+            // Anything that does not start with a dot.
+            '^[^. ]',
+            // Packages.
+            // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
+            '^@?\\w',
+          ],
+        ],
+      },
+    ],
   },
 }
