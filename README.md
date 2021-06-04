@@ -1,5 +1,5 @@
 <div align="center">
-<h1>eslint-config-kentcdodds</h1>
+<h1>eslint-config-crisfcodes</h1>
 
 <p>ESLint rules for all of my personal projects. Feel free to use these conventions :-)</p>
 </div>
@@ -39,7 +39,7 @@ This module is distributed via [npm][npm] which is bundled with [node][node] and
 should be installed as one of your project's `devDependencies`:
 
 ```
-npm install --save-dev eslint-config-kentcdodds
+npm install --save-dev eslint-config-crisfcodes
 ```
 
 This library has a required `peerDependencies` listing for [`eslint`][eslint]
@@ -50,7 +50,7 @@ Then add the extends to your `.eslintrc.js`:
 
 ```javascript
 module.exports = {
-  extends: 'kentcdodds',
+  extends: 'crisfcodes',
   rules: {
     // your overrides
   },
@@ -66,7 +66,7 @@ You can use them standalone:
 
 ```javascript
 module.exports = {
-  extends: 'kentcdodds/<config-name>',
+  extends: 'crisfcodes/<config-name>',
 }
 ```
 
@@ -74,7 +74,7 @@ Or in combination with the base config (recommended)
 
 ```javascript
 module.exports = {
-  extends: ['kentcdodds', 'kentcdodds/<config-name>'],
+  extends: ['crisfcodes', 'crisfcodes/<config-name>'],
 }
 ```
 
@@ -114,11 +114,11 @@ for it.
 ```javascript
 module.exports = {
   extends: [
-    'kentcdodds/possible-errors',
-    'kentcdodds/best-practices',
-    'kentcdodds/es6/possible-errors',
-    'kentcdodds/import',
-    'kentcdodds/jest',
+    'crisfcodes/possible-errors',
+    'crisfcodes/best-practices',
+    'crisfcodes/es6/possible-errors',
+    'crisfcodes/import',
+    'crisfcodes/jest',
   ],
   rules: {
     /* custom rules */
