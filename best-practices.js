@@ -9,10 +9,10 @@ module.exports = {
     'consistent-return': 'error',
     'default-case': 'error',
     'default-case-last': 'error',
-    'default-param-last': 'off',
+    'default-param-last': 'error',
     'dot-notation': 'error',
-    eqeqeq: 'off',
-    'grouped-accessor-pairs': 'off',
+    eqeqeq: ['error', 'smart'],
+    'grouped-accessor-pairs': 'error',
     'guard-for-in': 'error',
     'max-classes-per-file': 'off',
     'no-alert': 'error',
@@ -20,7 +20,7 @@ module.exports = {
     'no-case-declarations': 'error',
     'no-constructor-return': 'error',
     'no-div-regex': 'error',
-    'no-else-return': 'off',
+    'no-else-return': ['error', {allowElseIf: false}],
     'no-empty-function': 'off', // we're all grown ups here...
     'no-empty-pattern': 'error',
     'no-eq-null': 'off',
@@ -49,7 +49,57 @@ module.exports = {
     'no-param-reassign': 'off',
     'no-proto': 'error',
     'no-redeclare': 'error',
-    'no-restricted-properties': 'off', // no ideas of what to disallow right now...
+    'no-restricted-properties': [
+      'error',
+      {
+        object: 'arguments',
+        property: 'callee',
+        message: 'arguments.callee is deprecated',
+      },
+      {
+        object: 'global',
+        property: 'isFinite',
+        message: 'Please use Number.isFinite instead',
+      },
+      {
+        object: 'self',
+        property: 'isFinite',
+        message: 'Please use Number.isFinite instead',
+      },
+      {
+        object: 'window',
+        property: 'isFinite',
+        message: 'Please use Number.isFinite instead',
+      },
+      {
+        object: 'global',
+        property: 'isNaN',
+        message: 'Please use Number.isNaN instead',
+      },
+      {
+        object: 'self',
+        property: 'isNaN',
+        message: 'Please use Number.isNaN instead',
+      },
+      {
+        object: 'window',
+        property: 'isNaN',
+        message: 'Please use Number.isNaN instead',
+      },
+      {
+        property: '__defineGetter__',
+        message: 'Please use Object.defineProperty instead.',
+      },
+      {
+        property: '__defineSetter__',
+        message: 'Please use Object.defineProperty instead.',
+      },
+      {
+        object: 'Math',
+        property: 'pow',
+        message: 'Use the exponentiation operator (**) instead.',
+      },
+    ],
     'no-return-assign': 'error',
     'no-return-await': 'error',
     'no-script-url': 'error',
@@ -69,7 +119,7 @@ module.exports = {
     'no-warning-comments': ['error', {terms: ['fixme'], location: 'anywhere'}],
     'no-with': 'off',
     'prefer-named-capture-group': 'off', // maybe one day... But I'm not used to it yet.
-    'prefer-promise-reject-errors': 'off', // maybe one day... Not sure I'm in...
+    'prefer-promise-reject-errors': ['error', {allowEmptyReject: true}],
     'prefer-regex-literals': 'off',
     radix: 'error',
     'require-await': 'off',
