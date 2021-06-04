@@ -16,7 +16,11 @@ module.exports = {
       '^\\$?(__)?(([A-Z]|[a-z]|[0-9]+)|([A-Z_]))*\\$?$',
     ],
     'line-comment-position': 'off',
-    'lines-between-class-members': 'off',
+    'lines-between-class-members': [
+      'error',
+      'always',
+      {exceptAfterSingleLine: false},
+    ],
     'max-depth': ['error', 4],
     'max-lines': [
       'error',
@@ -79,7 +83,68 @@ module.exports = {
         '@typescript-eslint/member-delimiter-style': 'off',
         '@typescript-eslint/member-ordering': 'off',
         '@typescript-eslint/method-signature-style': 'off',
-        '@typescript-eslint/naming-convention': 'off',
+        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/naming-convention.md
+        '@typescript-eslint/naming-convention': [
+          'error',
+          // Enforce that all variables are either in camelCase or UPPER_CASE,
+          // Allow PascalCase in const, sometimes represent react components
+          {
+            selector: 'default',
+            format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
+            leadingUnderscore: 'allowDouble',
+            trailingUnderscore: 'allowDouble',
+          },
+          // Ignore destructured names:
+          // Sometimes you might want to allow destructured properties to retain
+          // their original name, even if it breaks your naming convention.
+          {
+            selector: 'variable',
+            modifiers: ['destructured'],
+            format: null,
+          },
+          // Enforce that private members aren't prefixed with an underscore
+          {
+            selector: 'memberLike',
+            modifiers: ['private'],
+            format: ['camelCase'],
+            leadingUnderscore: 'forbid',
+          },
+          // Enforce that type parameters (generics) are prefixed with T
+          {
+            selector: 'typeParameter',
+            format: ['PascalCase'],
+            prefix: ['T'],
+          },
+          // Enforce that interface names do not begin with an I
+          {
+            selector: 'interface',
+            format: ['PascalCase'],
+            custom: {
+              regex: '^I[A-Z]',
+              match: false,
+            },
+          },
+          // Enforce that types are PascalCase
+          {
+            selector: 'typeLike',
+            format: ['PascalCase'],
+          },
+          // Ignore properties that require quotes
+          {
+            selector: [
+              'classProperty',
+              'objectLiteralProperty',
+              'typeProperty',
+              'classMethod',
+              'objectLiteralMethod',
+              'typeMethod',
+              'accessor',
+              'enumMember',
+            ],
+            format: null,
+            modifiers: ['requiresQuotes'],
+          },
+        ],
         '@typescript-eslint/no-confusing-non-null-assertion': 'off', // prettier reformats their "correct" example anyway 🤷‍♂️
         '@typescript-eslint/no-extra-non-null-assertion': 'error',
         '@typescript-eslint/no-non-null-assertion': 'error',
