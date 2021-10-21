@@ -29,5 +29,6 @@ export function variableNames() {
   const __thing = '__filename'
   const CONST_VALUE = 'CONST_VALUE'
   const __DEV__ = 'global constant'
-  return {$el, user$, camelCase, PascalCase, __thing, __DEV__, CONST_VALUE}
+  const _ = 'Ignore variable'
+  return {$el, user$, camelCase, PascalCase, __thing, __DEV__, CONST_VALUE, _}
 }

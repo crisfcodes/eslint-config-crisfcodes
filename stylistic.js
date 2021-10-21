@@ -91,8 +91,8 @@ module.exports = {
           {
             selector: 'default',
             format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
-            leadingUnderscore: 'allowDouble',
-            trailingUnderscore: 'allowDouble',
+            leadingUnderscore: 'allowSingleOrDouble',
+            trailingUnderscore: 'allowSingleOrDouble',
           },
           // Ignore destructured names:
           // Sometimes you might want to allow destructured properties to retain
