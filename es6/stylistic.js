@@ -11,13 +11,7 @@ module.exports = {
     'sort-imports': 'off',
 
     'new-cap': 'off',
-    '@babel/new-cap': [
-      'error',
-      {
-        newIsCap: true,
-        capIsNew: true,
-      },
-    ],
+    '@babel/new-cap': 'off',
 
     'no-invalid-this': 'off',
     '@babel/no-invalid-this': 'error',
