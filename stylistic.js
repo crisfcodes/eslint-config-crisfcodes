@@ -94,6 +94,13 @@ module.exports = {
             leadingUnderscore: 'allowSingleOrDouble',
             trailingUnderscore: 'allowSingleOrDouble',
           },
+          // Enforce that boolean variables are prefixed with an allowed verb
+          {
+            selector: 'variable',
+            types: ['boolean'],
+            format: ['PascalCase'],
+            prefix: ['is', 'should', 'has', 'can', 'did', 'will'],
+          },
           // Ignore destructured names:
           // Sometimes you might want to allow destructured properties to retain
           // their original name, even if it breaks your naming convention.
@@ -109,24 +116,28 @@ module.exports = {
             format: ['camelCase'],
             leadingUnderscore: 'forbid',
           },
-          // Enforce that type parameters (generics) are prefixed with T
-          {
-            selector: 'typeParameter',
-            format: ['PascalCase'],
-            prefix: ['T'],
-          },
-          // Enforce that interface names do not begin with an I
-          {
-            selector: 'interface',
-            format: ['PascalCase'],
-            custom: {
-              regex: '^I[A-Z]',
-              match: false,
-            },
-          },
           // Enforce that types are PascalCase
           {
             selector: 'typeLike',
+            format: ['PascalCase'],
+          },
+          {
+            selector: 'typeParameter',
+            format: ['PascalCase'],
+            suffix: ['T'],
+          },
+          {
+            selector: 'typeAlias',
+            format: ['PascalCase'],
+          },
+          // Enforce that type parameters (generics) are suffixed with `Enum`
+          {
+            selector: 'enum',
+            format: ['PascalCase'],
+            suffix: ['Enum'],
+          },
+          {
+            selector: 'enumMember',
             format: ['PascalCase'],
           },
           // Ignore properties that require quotes

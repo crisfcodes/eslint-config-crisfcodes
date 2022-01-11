@@ -1,11 +1,15 @@
-import * as React from 'react'
+import React from 'react'
 
 export default Users
 
-type Props = {
+enum ProfilesEnum {
+  Admin = 'ADMIN',
+}
+
+type UsersProps = {
   nameFilter: string
 }
-function Users({nameFilter}: Props) {
+function Users({nameFilter}: UsersProps) {
   const users = [{name: 'Janice', friends: ['Albert', 'Nancy'], id: 23}].filter(
     ({name}) => name.toLowerCase().includes(nameFilter),
   )
@@ -27,7 +31,7 @@ export function variableNames() {
   const camelCase = 'camelCase'
   const PascalCase = 'PascalCase'
   const __thing = '__filename'
-  const CONST_VALUE = 'CONST_VALUE'
+  const CONST_VALUE = ProfilesEnum.Admin
   const __DEV__ = 'global constant'
   const _ = 'Ignore variable'
   return {$el, user$, camelCase, PascalCase, __thing, __DEV__, CONST_VALUE, _}

@@ -157,6 +157,8 @@ module.exports = {
 
         'consistent-return': 'off', // in TS this is much less an issue
 
+        '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+
         'default-param-last': 'off',
         '@typescript-eslint/default-param-last': 'off',
 
