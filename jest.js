@@ -65,7 +65,7 @@ const rules = {
   'jest/prefer-lowercase-title': 'error',
   'jest/prefer-to-be': 'error',
   'jest/prefer-spy-on': 'off',
-  'jest/prefer-snapshot-hint': 'error',
+  'jest/prefer-snapshot-hint': 'off',
   'jest/prefer-strict-equal': 'off',
   'jest/prefer-to-be-null': 'off',
   'jest/prefer-to-be-undefined': 'off',
