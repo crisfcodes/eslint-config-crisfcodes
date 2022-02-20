@@ -2,6 +2,10 @@ import React from 'react'
 
 export default Users
 
+const response = [false, () => {}]
+
+const [loading, setIsLoading] = response
+
 enum Profile {
   Admin = 'Admin',
 }
@@ -34,5 +38,16 @@ export function variableNames() {
   const CONST_VALUE = Profile.Admin
   const __DEV__ = 'global constant'
   const _ = 'Ignore variable'
-  return {$el, user$, camelCase, PascalCase, __thing, __DEV__, CONST_VALUE, _}
+  const isLoading = [loading, setIsLoading]
+  return {
+    $el,
+    user$,
+    camelCase,
+    PascalCase,
+    __thing,
+    __DEV__,
+    CONST_VALUE,
+    _,
+    isLoading,
+  }
 }

@@ -110,6 +110,12 @@ module.exports = {
             format: null,
           },
           {
+            selector: 'variable',
+            types: ['boolean'],
+            modifiers: ['destructured'],
+            format: null,
+          },
+          {
             selector: 'function',
             format: ['camelCase', 'PascalCase'],
           },
