@@ -2,8 +2,8 @@ import React from 'react'
 
 export default Users
 
-enum ProfilesEnum {
-  Admin = 'ADMIN',
+enum Profile {
+  Admin = 'Admin',
 }
 
 type UsersProps = {
@@ -31,7 +31,7 @@ export function variableNames() {
   const camelCase = 'camelCase'
   const PascalCase = 'PascalCase'
   const __thing = '__filename'
-  const CONST_VALUE = ProfilesEnum.Admin
+  const CONST_VALUE = Profile.Admin
   const __DEV__ = 'global constant'
   const _ = 'Ignore variable'
   return {$el, user$, camelCase, PascalCase, __thing, __DEV__, CONST_VALUE, _}

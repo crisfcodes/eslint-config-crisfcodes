@@ -86,7 +86,7 @@ module.exports = {
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/naming-convention.md
         '@typescript-eslint/naming-convention': [
           'error',
-          // Enforce that all variables are either in camelCase or UPPER_CASE,
+          // Enforce that all variables are either in camelCase, PascalCase or UPPER_CASE,
           // Allow PascalCase in const, sometimes represent react components
           {
             selector: 'default',
@@ -109,36 +109,27 @@ module.exports = {
             modifiers: ['destructured'],
             format: null,
           },
-          // Enforce that private members aren't prefixed with an underscore
+          {
+            selector: 'function',
+            format: ['camelCase', 'PascalCase'],
+          },
           {
             selector: 'memberLike',
             modifiers: ['private'],
             format: ['camelCase'],
             leadingUnderscore: 'forbid',
           },
-          // Enforce that types are PascalCase
           {
-            selector: 'typeLike',
+            selector: ['typeLike', 'enumMember'],
             format: ['PascalCase'],
           },
           {
-            selector: 'typeParameter',
+            selector: ['typeParameter'],
             format: ['PascalCase'],
-            suffix: ['T'],
-          },
-          {
-            selector: 'typeAlias',
-            format: ['PascalCase'],
-          },
-          // Enforce that type parameters (generics) are suffixed with `Enum`
-          {
-            selector: 'enum',
-            format: ['PascalCase'],
-            suffix: ['Enum'],
-          },
-          {
-            selector: 'enumMember',
-            format: ['PascalCase'],
+            custom: {
+              regex: '[a-zA-Z0-9]{2,}',
+              match: true,
+            },
           },
           // Ignore properties that require quotes
           {
